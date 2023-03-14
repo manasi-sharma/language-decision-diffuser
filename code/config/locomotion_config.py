@@ -1,7 +1,7 @@
 import torch
 
-#from params_proto.neo_proto import ParamsProto, PrefixProto, Proto
-from params_proto.proto import ParamsProto, PrefixProto, Proto
+from params_proto.neo_proto import ParamsProto, PrefixProto, Proto
+#from params_proto.proto import ParamsProto, PrefixProto, Proto
 
 class Config(ParamsProto):
     # misc
