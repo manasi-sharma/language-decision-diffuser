@@ -1,5 +1,7 @@
 import diffuser.utils as utils
 import torch
+import sys
+sys.path.append('/iliad/u/manasis/language-decision-diffuser/code/')
 
 def main(**deps):
     from ml_logger import logger, RUN
