@@ -162,7 +162,9 @@ def main(**deps):
 
     logger.print('Testing forward...', end=' ', flush=True)
     batch = utils.batchify(dataset[0], Config.device)
+    import pdb;pdb.set_trace()
     loss, _ = diffusion.loss(*batch)
+    import pdb;pdb.set_trace()
     loss.backward()
     logger.print('✓')
 

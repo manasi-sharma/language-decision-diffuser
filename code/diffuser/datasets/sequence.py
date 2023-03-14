@@ -89,7 +89,7 @@ class SequenceDataset(torch.utils.data.Dataset):
         for key in keys:
             #print("\n\n\nself.fields[key]: ", self.fields[key].shape)
             #print("self.n_episodes*self.max_path_length: ", self.n_episodes*self.max_path_length, "\n\n\n")
-            import pdb;pdb.set_trace()
+            #import pdb;pdb.set_trace()
             array = self.fields[key].reshape(self.n_episodes*self.max_path_length, -1)
             normed = self.normalizer(array, key)
             self.fields[f'normed_{key}'] = normed.reshape(self.n_episodes, self.max_path_length, -1)
