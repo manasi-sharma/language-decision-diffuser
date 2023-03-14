@@ -27,6 +27,7 @@ class SequenceDataset(torch.utils.data.Dataset):
         self.use_padding = use_padding
         self.include_returns = include_returns
 
+        read_npy_embeddings = True
         self.read_npy_embeddings = read_npy_embeddings
 
         if self.read_npy_embeddings:
