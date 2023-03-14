@@ -157,7 +157,8 @@ class Trainer(object):
             'model': self.model.state_dict(),
             'ema': self.ema_model.state_dict()
         }
-        savepath = os.path.join(self.bucket, logger.prefix, 'checkpoint')
+        #savepath = os.path.join(self.bucket, logger.prefix, 'checkpoint')
+        savepath = os.path.join(self.bucket, 'checkpoint')
         os.makedirs(savepath, exist_ok=True)
         # logger.save_torch(data, savepath)
         if self.save_checkpoints:
@@ -171,7 +172,8 @@ class Trainer(object):
         '''
             loads model and ema from disk
         '''
-        loadpath = os.path.join(self.bucket, logger.prefix, f'checkpoint/state.pt')
+        #loadpath = os.path.join(self.bucket, logger.prefix, f'checkpoint/state.pt')
+        loadpath = os.path.join(self.bucket, f'checkpoint/state.pt')
         # data = logger.load_torch(loadpath)
         data = torch.load(loadpath)
 
