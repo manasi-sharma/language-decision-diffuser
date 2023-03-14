@@ -51,9 +51,11 @@ def flatten(dataset, path_lengths):
     flattened = {}
     for key, xs in dataset.items():
         assert len(xs) == len(path_lengths)
+        length = 32
         flattened[key] = np.concatenate([
             x[:length]
-            for x, length in zip(xs, path_lengths)
+            #for x, length in zip(xs, path_lengths)
+            for x, _ in zip(xs, [])
         ], axis=0)
     return flattened
 
