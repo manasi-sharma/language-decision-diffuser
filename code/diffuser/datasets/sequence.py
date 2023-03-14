@@ -89,13 +89,16 @@ class SequenceDataset(torch.utils.data.Dataset):
             normed = self.normalizer(array, key)
             self.fields[f'normed_{key}'] = normed.reshape(self.n_episodes, self.max_path_length, -1)
 
-    def make_indices(self, path_lengths, horizon):
+    #def make_indices(self, path_lengths, horizon):
+    def make_indices(self, len_path_lengths, horizon):
         '''
             makes indices for sampling from dataset;
             each index maps to a datapoint
         '''
         indices = []
-        for i, path_length in enumerate(path_lengths):
+        #for i, path_length in enumerate(path_lengths):
+        path_length = 32
+        for i in range(len_path_lengths):
             max_start = min(path_length - 1, self.max_path_length - horizon)
             if not self.use_padding:
                 max_start = min(max_start, path_length - horizon)
