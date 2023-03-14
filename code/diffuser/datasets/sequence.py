@@ -34,6 +34,8 @@ class SequenceDataset(torch.utils.data.Dataset):
             #
             # import pdb;pdb.set_trace()
             #t1= time()
+            max_path_length = 32
+
             observations = np.load('/iliad/u/manasis/language-diffuser/code/dataset_npy_files/observations.npy')
             actions = np.load('/iliad/u/manasis/language-diffuser/code/dataset_npy_files/actions.npy')
             language = np.load('/iliad/u/manasis/language-diffuser/code/dataset_npy_files/language.npy')
