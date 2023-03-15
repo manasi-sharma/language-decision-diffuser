@@ -32,7 +32,7 @@ class SequenceDataset(torch.utils.data.Dataset):
 
         if self.read_npy_embeddings:
             #
-            # import pdb;pdb.set_trace()
+            import pdb;pdb.set_trace()
             #t1= time()
             self.max_path_length = 33
 
@@ -40,7 +40,7 @@ class SequenceDataset(torch.utils.data.Dataset):
             actions = np.load('/iliad/u/manasis/language-diffuser/code/dataset_npy_files/actions.npy')
             language = np.load('/iliad/u/manasis/language-diffuser/code/dataset_npy_files/language.npy')
             #print("\n\n\ntimeeee: ", (time() - t1)/60)
-            #import pdb;pdb.set_trace()
+            import pdb;pdb.set_trace()
 
             fields = {}
             fields['observations'] = observations
@@ -91,9 +91,9 @@ class SequenceDataset(torch.utils.data.Dataset):
             #print("self.n_episodes*self.max_path_length: ", self.n_episodes*self.max_path_length, "\n\n\n")
             #import pdb;pdb.set_trace()
             array = self.fields[key].reshape(self.n_episodes*self.max_path_length, -1)
-            import pdb;pdb.set_trace()
+            #import pdb;pdb.set_trace()
             normed = self.normalizer(array, key)
-            import pdb;pdb.set_trace()
+            #import pdb;pdb.set_trace()
             self.fields[f'normed_{key}'] = normed.reshape(self.n_episodes, self.max_path_length, -1)
 
     #def make_indices(self, path_lengths, horizon):
