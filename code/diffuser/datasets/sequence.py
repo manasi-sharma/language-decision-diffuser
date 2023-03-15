@@ -57,6 +57,7 @@ class SequenceDataset(torch.utils.data.Dataset):
             self.normalizer = DatasetNormalizer(fields, normalizer) #, path_lengths=fields['path_lengths'])
             #self.indices = self.make_indices(fields.path_lengths, horizon)
             self.indices = self.make_indices(self.n_episodes, horizon)
+            import pdb;pdb.set_trace()
             self.normalize()
         
         else:
@@ -91,9 +92,9 @@ class SequenceDataset(torch.utils.data.Dataset):
             #print("self.n_episodes*self.max_path_length: ", self.n_episodes*self.max_path_length, "\n\n\n")
             #import pdb;pdb.set_trace()
             array = self.fields[key].reshape(self.n_episodes*self.max_path_length, -1)
-            #import pdb;pdb.set_trace()
+            import pdb;pdb.set_trace()
             normed = self.normalizer(array, key)
-            #import pdb;pdb.set_trace()
+            import pdb;pdb.set_trace()
             self.fields[f'normed_{key}'] = normed.reshape(self.n_episodes, self.max_path_length, -1)
 
     #def make_indices(self, path_lengths, horizon):
